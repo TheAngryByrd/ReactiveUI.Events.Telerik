@@ -25,6 +25,10 @@ namespace Telerik.Windows.Controls
         {
             return new DisposableObjectEvents(This);
         }
+        public static RadImageEditorEvents Events(this RadImageEditor This)
+        {
+            return new RadImageEditorEvents(This);
+        }
         public static RadAutoCompleteBoxEvents Events(this RadAutoCompleteBox This)
         {
             return new RadAutoCompleteBoxEvents(This);
@@ -212,6 +216,30 @@ namespace Telerik.Windows.Controls
 
         public IObservable<System.EventArgs> Disposed {
             get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.Disposed += x, x => This.Disposed -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadImageEditorEvents
+
+    {
+        RadImageEditor This;
+
+        public RadImageEditorEvents(RadImageEditor This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ImageSavedEventArgs> ImageSaved {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ImageSavedEventArgs>, Telerik.Windows.Controls.ImageSavedEventArgs>(x => This.ImageSaved += x, x => This.ImageSaved -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ImageSavingEventArgs> ImageSaving {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ImageSavingEventArgs>, Telerik.Windows.Controls.ImageSavingEventArgs>(x => This.ImageSaving += x, x => This.ImageSaving -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ImageEditCancelledEventArgs> ImageEditCancelled {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ImageEditCancelledEventArgs>, Telerik.Windows.Controls.ImageEditCancelledEventArgs>(x => This.ImageEditCancelled += x, x => This.ImageEditCancelled -= x).Select(x => x.EventArgs); }
         }
 
     }
