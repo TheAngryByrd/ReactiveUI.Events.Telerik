@@ -25,16 +25,12 @@ namespace {{Name}}
 
 {{#Types}}
     public class {{Name}}Events
-{{#Parent}}
-        : {{Name}}Events
-{{/Parent}}
+
     {
         {{Name}} This;
 
         public {{Name}}Events({{Name}} This)
-{{#Parent}}
-            : base(This)
-{{/Parent}}
+
         {
             this.This = This;
         }

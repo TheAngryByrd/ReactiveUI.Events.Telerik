@@ -314,12 +314,8 @@ namespace EventBuilder
                 fullPath = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll");
             }
 
-            // JB: This hacks Telerik's need for System
-            //if (fullName.Contains("System"))
-            //{
-            //    fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\System.Windows.dll";
-            //}
-
+            fullPath = TelerikFixins(fullName, fullPath);
+         
             if (fullPath == null)
             {
                 var err = String.Format("Failed to resolve!!! {0}", fullName);
@@ -348,10 +344,7 @@ namespace EventBuilder
             }
 
             // JB: This hacks Telerik's need for System
-            if (fullName.Contains("System"))
-            {
-                fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\System.Windows.dll";
-            }
+            fullPath = TelerikFixins(fullName, fullPath);
 
             if (fullPath == null)
             {
@@ -361,6 +354,21 @@ namespace EventBuilder
             }
 
             return AssemblyDefinition.ReadAssembly(fullPath);
+        }
+  
+        private string TelerikFixins(string fullName, string fullPath)
+        {
+            // JB: This hacks Telerik's need for System
+            if (fullName.Contains("System"))
+            {
+                fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\System.Windows.dll";
+            }
+            if(fullName.Contains("Microsoft.Phone"))
+            {
+                fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\Microsoft.Phone.dll";
+            }
+            
+            return fullPath;
         }
 
         public AssemblyDefinition Resolve(AssemblyNameReference name, ReaderParameters parameters)
