@@ -145,7 +145,8 @@ namespace EventBuilder
 
         public static EventDefinition[] GetPublicEvents(TypeDefinition t)
         {
-            return t.Events.Where(x => x.AddMethod.IsPublic && !x.AddMethod.IsStatic && GetEventArgsTypeForEvent(x) != null).ToArray();
+            EventDefinition[] array = t.Events.Where(x => x.AddMethod.IsPublic && !x.AddMethod.IsStatic && GetEventArgsTypeForEvent(x) != null).ToArray();
+            return array;
         }
 
         public static MethodDefinition[] GetPublicDelegateMethods(TypeDefinition t)
@@ -161,7 +162,8 @@ namespace EventBuilder
 
         public static TypeDefinition[] SafeGetTypes(AssemblyDefinition a)
         {
-            return a.Modules.SelectMany(x => x.GetTypes()).ToArray();
+            TypeDefinition[] array = a.Modules.SelectMany(x => x.GetTypes()).ToArray();
+            return array;
         }
 
         public static string GetRealTypeName(TypeDefinition t)
@@ -366,6 +368,10 @@ namespace EventBuilder
             if(fullName.Contains("Microsoft.Phone"))
             {
                 fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\Microsoft.Phone.dll";
+            }
+            if(fullName.Contains("Windows"))
+            {
+                fullPath = @"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd";
             }
             
             return fullPath;

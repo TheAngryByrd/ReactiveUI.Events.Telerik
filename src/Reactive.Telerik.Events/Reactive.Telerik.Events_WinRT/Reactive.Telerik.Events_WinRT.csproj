@@ -60,18 +60,6 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Rx-PlatformServices.2.2.2\lib\windows8\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Windows.Threading">
-      <HintPath>..\ext\winrt\System.Reactive.Windows.Threading.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.WindowsRuntime">
-      <HintPath>..\ext\winrt\System.Reactive.WindowsRuntime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ReactiveUI\ReactiveUI.csproj">
-      <Project>{464cb812-f99f-401b-be4c-e8f0515cd19d}</Project>
-      <Name>ReactiveUI</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -83,7 +71,7 @@
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>
     <PreBuildEvent>%25SystemRoot%25\Microsoft.NET\Framework\v4.0.30319\msbuild.exe /p:Configuration=Release "$(ProjectDir)..\EventBuilder.csproj"
-"$(ProjectDir)..\EventBuilder.exe" "$(ProjectDir)\WinMetadata.Win81\Windows.Foundation.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Globalization.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Graphics.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Management.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Media.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Networking.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Security.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Storage.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.System.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.UI.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.UI.Xaml.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Web.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.ApplicationModel.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Data.winmd" "$(ProjectDir)\WinMetadata.Win81\Windows.Devices.winmd" "$(ProjectDir)..\Events.mustache" &gt; "$(ProjectDir)TelerikEvents_WinRT.cs"
+"$(ProjectDir)..\EventBuilder.exe" "C:\Program Files (x86)\Telerik\UI for Windows 8.1 XAML Q1 2014\Binaries\Chart\Telerik.UI.Xaml.Chart.dll" "$(ProjectDir)..\Events.mustache" &gt; "$(ProjectDir)TelerikEvents_WinRT.cs"
 del "$(ProjectDir)..\EventBuilder.exe"
 del "$(ProjectDir)..\EventBuilder.pdb"
 del "$(ProjectDir)..\Nustache.Core.dll"
