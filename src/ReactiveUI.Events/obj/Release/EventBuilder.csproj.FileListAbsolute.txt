@@ -7,3 +7,9 @@ C:\Users\byrd\Documents\GitHub\ReactiveUI\ReactiveUI.Events\EventBuilder.pdb
 C:\Users\byrd\Documents\GitHub\ReactiveUI\ReactiveUI.Events\Mono.Cecil.dll
 C:\Users\byrd\Documents\GitHub\ReactiveUI\ReactiveUI.Events\Nustache.Core.dll
 C:\Users\byrd\Documents\GitHub\ReactiveUI\ReactiveUI.Events\Mono.Cecil.pdb
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\obj\Release\EventBuilder.csprojResolveAssemblyReference.cache
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\Events.mustache
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\obj\Release\EventBuilder.exe
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\obj\Release\EventBuilder.pdb
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\EventBuilder.exe
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\EventBuilder.pdb
