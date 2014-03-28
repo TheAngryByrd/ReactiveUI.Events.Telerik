@@ -62,6 +62,10 @@ namespace Telerik.Windows.Controls
         {
             return new ChartPaletteEvents(This);
         }
+        public static GaugeIndicatorEvents Events(this GaugeIndicator This)
+        {
+            return new GaugeIndicatorEvents(This);
+        }
         public static RadAutoCompleteBoxEvents Events(this RadAutoCompleteBox This)
         {
             return new RadAutoCompleteBoxEvents(This);
@@ -409,6 +413,22 @@ namespace Telerik.Windows.Controls
 
         public IObservable<System.EventArgs> Changed {
             get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.Changed += x, x => This.Changed -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class GaugeIndicatorEvents
+
+    {
+        GaugeIndicator This;
+
+        public GaugeIndicatorEvents(GaugeIndicator This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.IndicatorValueChangedEventArgs> ValueChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.IndicatorValueChangedEventArgs>, Telerik.Windows.Controls.IndicatorValueChangedEventArgs>(x => This.ValueChanged += x, x => This.ValueChanged -= x).Select(x => x.EventArgs); }
         }
 
     }
