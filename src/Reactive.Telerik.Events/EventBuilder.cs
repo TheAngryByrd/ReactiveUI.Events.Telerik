@@ -207,6 +207,7 @@ namespace EventBuilder
         {
             // Find the EventArgs type parameter of the event via digging around via reflection
             var type = ei.EventType.Resolve();
+            if(type == null) return null;
             var invoke = type.Methods.First(x => x.Name == "Invoke");
             if (invoke.Parameters.Count < 2) return null;
 
@@ -313,6 +314,12 @@ namespace EventBuilder
                 fullPath = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll");
             }
 
+            // JB: This hacks Telerik's need for System
+            //if (fullName.Contains("System"))
+            //{
+            //    fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\System.Windows.dll";
+            //}
+
             if (fullPath == null)
             {
                 var err = String.Format("Failed to resolve!!! {0}", fullName);
@@ -338,6 +345,12 @@ namespace EventBuilder
             if (fullName.Contains("mscorlib"))
             {
                 fullPath = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll");
+            }
+
+            // JB: This hacks Telerik's need for System
+            if (fullName.Contains("System"))
+            {
+                fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\System.Windows.dll";
             }
 
             if (fullPath == null)
