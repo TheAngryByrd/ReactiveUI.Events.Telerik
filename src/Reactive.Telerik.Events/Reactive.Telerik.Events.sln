@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3BC930
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reactive.Telerik.Events_WinRT", "Reactive.Telerik.Events_WinRT\Reactive.Telerik.Events_WinRT.csproj", "{689EC7CA-2D81-4124-929E-397B330CC358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,14 @@ Global
 		{19F609E2-CF40-4569-BA7D-6948D0FEF068}.Release|ARM.Build.0 = Release|ARM
 		{19F609E2-CF40-4569-BA7D-6948D0FEF068}.Release|x86.ActiveCfg = Release|x86
 		{19F609E2-CF40-4569-BA7D-6948D0FEF068}.Release|x86.Build.0 = Release|x86
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Release|ARM.ActiveCfg = Release|Any CPU
+		{689EC7CA-2D81-4124-929E-397B330CC358}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
