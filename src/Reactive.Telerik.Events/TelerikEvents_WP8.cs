@@ -4,6 +4,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
 using Telerik.Windows.Controls;
+using Telerik.Windows.Controls.AutoCompleteTextBox;
 using Telerik.Windows.Controls.SlideView;
 using Telerik.Windows.Controls.Primitives;
 using Telerik.Windows.Data;
@@ -23,6 +24,54 @@ namespace Telerik.Windows.Controls
         public static DisposableObjectEvents Events(this DisposableObject This)
         {
             return new DisposableObjectEvents(This);
+        }
+        public static RadAutoCompleteBoxEvents Events(this RadAutoCompleteBox This)
+        {
+            return new RadAutoCompleteBoxEvents(This);
+        }
+        public static WebServiceAutoCompleteProviderEvents Events(this WebServiceAutoCompleteProvider This)
+        {
+            return new WebServiceAutoCompleteProviderEvents(This);
+        }
+        public static RadCalendarEvents Events(this RadCalendar This)
+        {
+            return new RadCalendarEvents(This);
+        }
+        public static ValuePickerControlEvents Events(this ValuePickerControl This)
+        {
+            return new ValuePickerControlEvents(This);
+        }
+        public static RadDataFormEvents Events(this RadDataForm This)
+        {
+            return new RadDataFormEvents(This);
+        }
+        public static DataFormValidatorEvents Events(this DataFormValidator This)
+        {
+            return new DataFormValidatorEvents(This);
+        }
+        public static DateTimeSelectorEvents Events(this DateTimeSelector This)
+        {
+            return new DateTimeSelectorEvents(This);
+        }
+        public static DateTimePickerEvents Events(this DateTimePicker This)
+        {
+            return new DateTimePickerEvents(This);
+        }
+        public static RadListPickerEvents Events(this RadListPicker This)
+        {
+            return new RadListPickerEvents(This);
+        }
+        public static RadNumericUpDownEvents Events(this RadNumericUpDown This)
+        {
+            return new RadNumericUpDownEvents(This);
+        }
+        public static RadRatingEvents Events(this RadRating This)
+        {
+            return new RadRatingEvents(This);
+        }
+        public static RadTimeSpanPickerEvents Events(this RadTimeSpanPicker This)
+        {
+            return new RadTimeSpanPickerEvents(This);
         }
         public static ApplicationBarButtonEvents Events(this ApplicationBarButton This)
         {
@@ -163,6 +212,294 @@ namespace Telerik.Windows.Controls
 
         public IObservable<System.EventArgs> Disposed {
             get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.Disposed += x, x => This.Disposed -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadAutoCompleteBoxEvents
+
+    {
+        RadAutoCompleteBox This;
+
+        public RadAutoCompleteBoxEvents(RadAutoCompleteBox This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.SuggestionSelectedEventArgs> SuggestionSelected {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.SuggestionSelectedEventArgs>, Telerik.Windows.Controls.SuggestionSelectedEventArgs>(x => This.SuggestionSelected += x, x => This.SuggestionSelected -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class WebServiceAutoCompleteProviderEvents
+
+    {
+        WebServiceAutoCompleteProvider This;
+
+        public WebServiceAutoCompleteProviderEvents(WebServiceAutoCompleteProvider This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> InputChanged {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.InputChanged += x, x => This.InputChanged -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadCalendarEvents
+
+    {
+        RadCalendar This;
+
+        public RadCalendarEvents(RadCalendar This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<object>> SelectedValueChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangedEventArgs<object>>, Telerik.Windows.Controls.ValueChangedEventArgs<object>>(x => This.SelectedValueChanged += x, x => This.SelectedValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<object>> SelectedValueChanging {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangingEventArgs<object>>, Telerik.Windows.Controls.ValueChangingEventArgs<object>>(x => This.SelectedValueChanging += x, x => This.SelectedValueChanging -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<object>> DisplayDateChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangedEventArgs<object>>, Telerik.Windows.Controls.ValueChangedEventArgs<object>>(x => This.DisplayDateChanged += x, x => This.DisplayDateChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<object>> DisplayDateChanging {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangingEventArgs<object>>, Telerik.Windows.Controls.ValueChangingEventArgs<object>>(x => This.DisplayDateChanging += x, x => This.DisplayDateChanging -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.CalendarItemTapEventArgs> ItemTap {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.CalendarItemTapEventArgs>, Telerik.Windows.Controls.CalendarItemTapEventArgs>(x => This.ItemTap += x, x => This.ItemTap -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class ValuePickerControlEvents
+
+    {
+        ValuePickerControl This;
+
+        public ValuePickerControlEvents(ValuePickerControl This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> PopupClosed {
+            get { return Observable.FromEventPattern<System.EventHandler<System.EventArgs>, System.EventArgs>(x => This.PopupClosed += x, x => This.PopupClosed -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<System.EventArgs> PopupOpened {
+            get { return Observable.FromEventPattern<System.EventHandler<System.EventArgs>, System.EventArgs>(x => This.PopupOpened += x, x => This.PopupOpened -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<System.ComponentModel.CancelEventArgs> PopupClosing {
+            get { return Observable.FromEventPattern<System.EventHandler<System.ComponentModel.CancelEventArgs>, System.ComponentModel.CancelEventArgs>(x => This.PopupClosing += x, x => This.PopupClosing -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<System.ComponentModel.CancelEventArgs> PopupOpening {
+            get { return Observable.FromEventPattern<System.EventHandler<System.ComponentModel.CancelEventArgs>, System.ComponentModel.CancelEventArgs>(x => This.PopupOpening += x, x => This.PopupOpening -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueStringUpdateEventArgs> UpdatingValueString {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueStringUpdateEventArgs>, Telerik.Windows.Controls.ValueStringUpdateEventArgs>(x => This.UpdatingValueString += x, x => This.UpdatingValueString -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadDataFormEvents
+
+    {
+        RadDataForm This;
+
+        public RadDataFormEvents(RadDataForm This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValidatingDataFieldEventArgs> ValidatingDataFieldAsync {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.DataForm.ValidatingDataFieldEventHandler, Telerik.Windows.Controls.ValidatingDataFieldEventArgs>(x => This.ValidatingDataFieldAsync += x, x => This.ValidatingDataFieldAsync -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.CommittingDataFieldEventArgs> CommittingDataFieldAsync {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.DataForm.CommittingDataFieldEventHandler, Telerik.Windows.Controls.CommittingDataFieldEventArgs>(x => This.CommittingDataFieldAsync += x, x => This.CommittingDataFieldAsync -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.DataForm.RetrievingAttributeEventArgs> RetrievingAttribute {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.DataForm.RetrievingAttributeEventArgs>, Telerik.Windows.Controls.DataForm.RetrievingAttributeEventArgs>(x => This.RetrievingAttribute += x, x => This.RetrievingAttribute -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<System.EventArgs> Committed {
+            get { return Observable.FromEventPattern<System.EventHandler<System.EventArgs>, System.EventArgs>(x => This.Committed += x, x => This.Committed -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.DataFieldCreatingEventArgs> DataFieldCreating {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.DataFieldCreatingEventArgs>, Telerik.Windows.Controls.DataFieldCreatingEventArgs>(x => This.DataFieldCreating += x, x => This.DataFieldCreating -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.DataFieldCreatedEventArgs> DataFieldCreated {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.DataFieldCreatedEventArgs>, Telerik.Windows.Controls.DataFieldCreatedEventArgs>(x => This.DataFieldCreated += x, x => This.DataFieldCreated -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValidatingDataFieldEventArgs> ValidatingDataField {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValidatingDataFieldEventArgs>, Telerik.Windows.Controls.ValidatingDataFieldEventArgs>(x => This.ValidatingDataField += x, x => This.ValidatingDataField -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.CommittingDataFieldEventArgs> CommittingDataField {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.CommittingDataFieldEventArgs>, Telerik.Windows.Controls.CommittingDataFieldEventArgs>(x => This.CommittingDataField += x, x => This.CommittingDataField -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.DataFieldValueChangedEventArgs> DataFieldValueChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.DataFieldValueChangedEventArgs>, Telerik.Windows.Controls.DataFieldValueChangedEventArgs>(x => This.DataFieldValueChanged += x, x => This.DataFieldValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class DataFormValidatorEvents
+
+    {
+        DataFormValidator This;
+
+        public DataFormValidatorEvents(DataFormValidator This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValidatingDataFieldEventArgs> ValidateAsync {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.DataForm.ValidatingDataFieldEventHandler, Telerik.Windows.Controls.ValidatingDataFieldEventArgs>(x => This.ValidateAsync += x, x => This.ValidateAsync -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class DateTimeSelectorEvents
+
+    {
+        DateTimeSelector This;
+
+        public DateTimeSelectorEvents(DateTimeSelector This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<System.DateTime>> SelectedValueChanged {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.DateTimeValueChangedEventHandler, Telerik.Windows.Controls.ValueChangedEventArgs<System.DateTime>>(x => This.SelectedValueChanged += x, x => This.SelectedValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<System.DateTime>> SelectedValueChanging {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.DateTimeValueChangingEventHandler, Telerik.Windows.Controls.ValueChangingEventArgs<System.DateTime>>(x => This.SelectedValueChanging += x, x => This.SelectedValueChanging -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class DateTimePickerEvents
+
+    {
+        DateTimePicker This;
+
+        public DateTimePickerEvents(DateTimePicker This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<object>> ValueChanged {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.NullableDateTimeValueChangedEventHandler, Telerik.Windows.Controls.ValueChangedEventArgs<object>>(x => This.ValueChanged += x, x => This.ValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<object>> ValueChanging {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.NullableDateTimeValueChangingEventHandler, Telerik.Windows.Controls.ValueChangingEventArgs<object>>(x => This.ValueChanging += x, x => This.ValueChanging -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadListPickerEvents
+
+    {
+        RadListPicker This;
+
+        public RadListPickerEvents(RadListPicker This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ListPickerStateChangedEventArgs> StateChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ListPickerStateChangedEventArgs>, Telerik.Windows.Controls.ListPickerStateChangedEventArgs>(x => This.StateChanged += x, x => This.StateChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ItemCheckedStateChangingEventArgs> PopupItemCheckedStateChanging {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ItemCheckedStateChangingEventArgs>, Telerik.Windows.Controls.ItemCheckedStateChangingEventArgs>(x => This.PopupItemCheckedStateChanging += x, x => This.PopupItemCheckedStateChanging -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ItemCheckedStateChangedEventArgs> PopupItemCheckedStateChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ItemCheckedStateChangedEventArgs>, Telerik.Windows.Controls.ItemCheckedStateChangedEventArgs>(x => This.PopupItemCheckedStateChanged += x, x => This.PopupItemCheckedStateChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<System.EventArgs> ActionButtonTap {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.ActionButtonTap += x, x => This.ActionButtonTap -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadNumericUpDownEvents
+
+    {
+        RadNumericUpDown This;
+
+        public RadNumericUpDownEvents(RadNumericUpDown This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<System.Double>> ValueChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangedEventArgs<System.Double>>, Telerik.Windows.Controls.ValueChangedEventArgs<System.Double>>(x => This.ValueChanged += x, x => This.ValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<System.Double>> ValueChanging {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangingEventArgs<System.Double>>, Telerik.Windows.Controls.ValueChangingEventArgs<System.Double>>(x => This.ValueChanging += x, x => This.ValueChanging -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadRatingEvents
+
+    {
+        RadRating This;
+
+        public RadRatingEvents(RadRating This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<object>> ValueChanged {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangedEventArgs<object>>, Telerik.Windows.Controls.ValueChangedEventArgs<object>>(x => This.ValueChanged += x, x => This.ValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<object>> ValueChanging {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ValueChangingEventArgs<object>>, Telerik.Windows.Controls.ValueChangingEventArgs<object>>(x => This.ValueChanging += x, x => This.ValueChanging -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadTimeSpanPickerEvents
+
+    {
+        RadTimeSpanPicker This;
+
+        public RadTimeSpanPickerEvents(RadTimeSpanPicker This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangedEventArgs<object>> ValueChanged {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.NullableDateTimeValueChangedEventHandler, Telerik.Windows.Controls.ValueChangedEventArgs<object>>(x => This.ValueChanged += x, x => This.ValueChanged -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ValueChangingEventArgs<object>> ValueChanging {
+            get { return Observable.FromEventPattern<Telerik.Windows.Controls.NullableDateTimeValueChangingEventHandler, Telerik.Windows.Controls.ValueChangingEventArgs<object>>(x => This.ValueChanging += x, x => This.ValueChanging -= x).Select(x => x.EventArgs); }
         }
 
     }
@@ -679,6 +1016,33 @@ namespace Telerik.Windows.Controls
 
         public IObservable<Telerik.Windows.Controls.WindowOpenFailedEventArgs> OpenFailed {
             get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.WindowOpenFailedEventArgs>, Telerik.Windows.Controls.WindowOpenFailedEventArgs>(x => This.OpenFailed += x, x => This.OpenFailed -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+}
+namespace Telerik.Windows.Controls.AutoCompleteTextBox
+{
+    public static class EventsMixin
+    {
+        public static AutoCompleteItemsControlEvents Events(this AutoCompleteItemsControl This)
+        {
+            return new AutoCompleteItemsControlEvents(This);
+        }
+    }
+
+    public class AutoCompleteItemsControlEvents
+
+    {
+        AutoCompleteItemsControl This;
+
+        public AutoCompleteItemsControlEvents(AutoCompleteItemsControl This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.AutoCompleteTextBox.AutoCompleteItemClickEventArgs> ItemClick {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.AutoCompleteTextBox.AutoCompleteItemClickEventArgs>, Telerik.Windows.Controls.AutoCompleteTextBox.AutoCompleteItemClickEventArgs>(x => This.ItemClick += x, x => This.ItemClick -= x).Select(x => x.EventArgs); }
         }
 
     }
