@@ -4,6 +4,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
 using Telerik.Windows.Controls;
+using Telerik.Charting;
 using Telerik.Windows.Controls.AutoCompleteTextBox;
 using Telerik.Windows.Controls.SlideView;
 using Telerik.Windows.Controls.Primitives;
@@ -36,6 +37,30 @@ namespace Telerik.Windows.Controls
         public static RadJumpListEvents Events(this RadJumpList This)
         {
             return new RadJumpListEvents(This);
+        }
+        public static ChartSelectionBehaviorEvents Events(this ChartSelectionBehavior This)
+        {
+            return new ChartSelectionBehaviorEvents(This);
+        }
+        public static ChartTooltipBehaviorEvents Events(this ChartTooltipBehavior This)
+        {
+            return new ChartTooltipBehaviorEvents(This);
+        }
+        public static ChartTrackBallBehaviorEvents Events(this ChartTrackBallBehavior This)
+        {
+            return new ChartTrackBallBehaviorEvents(This);
+        }
+        public static ChartSeriesEvents Events(this ChartSeries This)
+        {
+            return new ChartSeriesEvents(This);
+        }
+        public static RadChartBaseEvents Events(this RadChartBase This)
+        {
+            return new RadChartBaseEvents(This);
+        }
+        public static ChartPaletteEvents Events(this ChartPalette This)
+        {
+            return new ChartPaletteEvents(This);
         }
         public static RadAutoCompleteBoxEvents Events(this RadAutoCompleteBox This)
         {
@@ -288,6 +313,102 @@ namespace Telerik.Windows.Controls
 
         public IObservable<Telerik.Windows.Controls.GroupPickerItemTapEventArgs> GroupPickerItemTap {
             get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.GroupPickerItemTapEventArgs>, Telerik.Windows.Controls.GroupPickerItemTapEventArgs>(x => This.GroupPickerItemTap += x, x => This.GroupPickerItemTap -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class ChartSelectionBehaviorEvents
+
+    {
+        ChartSelectionBehavior This;
+
+        public ChartSelectionBehaviorEvents(ChartSelectionBehavior This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> SelectionChanged {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.SelectionChanged += x, x => This.SelectionChanged -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class ChartTooltipBehaviorEvents
+
+    {
+        ChartTooltipBehavior This;
+
+        public ChartTooltipBehaviorEvents(ChartTooltipBehavior This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.TooltipContextNeededEventArgs> ContextNeeded {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.TooltipContextNeededEventArgs>, Telerik.Windows.Controls.TooltipContextNeededEventArgs>(x => This.ContextNeeded += x, x => This.ContextNeeded -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class ChartTrackBallBehaviorEvents
+
+    {
+        ChartTrackBallBehavior This;
+
+        public ChartTrackBallBehaviorEvents(ChartTrackBallBehavior This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.TrackBallInfoEventArgs> TrackInfoUpdated {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.TrackBallInfoEventArgs>, Telerik.Windows.Controls.TrackBallInfoEventArgs>(x => This.TrackInfoUpdated += x, x => This.TrackInfoUpdated -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class ChartSeriesEvents
+
+    {
+        ChartSeries This;
+
+        public ChartSeriesEvents(ChartSeries This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> DataBindingComplete {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.DataBindingComplete += x, x => This.DataBindingComplete -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadChartBaseEvents
+
+    {
+        RadChartBase This;
+
+        public RadChartBaseEvents(RadChartBase This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.ChartGestureEventArgs> PreviewGesture {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ChartGestureEventArgs>, Telerik.Windows.Controls.ChartGestureEventArgs>(x => This.PreviewGesture += x, x => This.PreviewGesture -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class ChartPaletteEvents
+
+    {
+        ChartPalette This;
+
+        public ChartPaletteEvents(ChartPalette This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> Changed {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.Changed += x, x => This.Changed -= x).Select(x => x.EventArgs); }
         }
 
     }
@@ -1092,6 +1213,37 @@ namespace Telerik.Windows.Controls
 
         public IObservable<Telerik.Windows.Controls.WindowOpenFailedEventArgs> OpenFailed {
             get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.WindowOpenFailedEventArgs>, Telerik.Windows.Controls.WindowOpenFailedEventArgs>(x => This.OpenFailed += x, x => This.OpenFailed -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+}
+namespace Telerik.Charting
+{
+    public static class EventsMixin
+    {
+        public static DisposableObjectEvents Events(this DisposableObject This)
+        {
+            return new DisposableObjectEvents(This);
+        }
+    }
+
+    public class DisposableObjectEvents
+
+    {
+        DisposableObject This;
+
+        public DisposableObjectEvents(DisposableObject This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> Disposing {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.Disposing += x, x => This.Disposing -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<System.EventArgs> Disposed {
+            get { return Observable.FromEventPattern<System.EventHandler, System.EventArgs>(x => This.Disposed += x, x => This.Disposed -= x).Select(x => x.EventArgs); }
         }
 
     }
