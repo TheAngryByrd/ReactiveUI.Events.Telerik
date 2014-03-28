@@ -13,3 +13,6 @@ C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\o
 C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\obj\Release\EventBuilder.pdb
 C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\EventBuilder.exe
 C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\EventBuilder.pdb
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\Mono.Cecil.dll
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\Nustache.Core.dll
+C:\Users\byrd\Documents\GitHub\ReactiveUI.Events.Telerik\src\ReactiveUI.Events\Mono.Cecil.pdb

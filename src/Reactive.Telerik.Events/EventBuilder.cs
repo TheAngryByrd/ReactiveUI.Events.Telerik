@@ -335,7 +335,7 @@ namespace EventBuilder
             }
 
             // NB: This hacks WinRT's weird mscorlib to just use the regular one
-            if (fullName.Contains("mscorlib") && fullName.Contains("255"))
+            if (fullName.Contains("mscorlib"))
             {
                 fullPath = Environment.ExpandEnvironmentVariables(@"%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll");
             }
