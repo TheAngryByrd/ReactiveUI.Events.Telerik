@@ -29,6 +29,14 @@ namespace Telerik.Windows.Controls
         {
             return new RadImageEditorEvents(This);
         }
+        public static RadConversationViewEvents Events(this RadConversationView This)
+        {
+            return new RadConversationViewEvents(This);
+        }
+        public static RadJumpListEvents Events(this RadJumpList This)
+        {
+            return new RadJumpListEvents(This);
+        }
         public static RadAutoCompleteBoxEvents Events(this RadAutoCompleteBox This)
         {
             return new RadAutoCompleteBoxEvents(This);
@@ -240,6 +248,46 @@ namespace Telerik.Windows.Controls
 
         public IObservable<Telerik.Windows.Controls.ImageEditCancelledEventArgs> ImageEditCancelled {
             get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ImageEditCancelledEventArgs>, Telerik.Windows.Controls.ImageEditCancelledEventArgs>(x => This.ImageEditCancelled += x, x => This.ImageEditCancelled -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadConversationViewEvents
+
+    {
+        RadConversationView This;
+
+        public RadConversationViewEvents(RadConversationView This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<System.EventArgs> RefreshRequested {
+            get { return Observable.FromEventPattern<System.EventHandler<System.EventArgs>, System.EventArgs>(x => This.RefreshRequested += x, x => This.RefreshRequested -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.ConversationViewMessageEventArgs> SendingMessage {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ConversationViewMessageEventArgs>, Telerik.Windows.Controls.ConversationViewMessageEventArgs>(x => This.SendingMessage += x, x => This.SendingMessage -= x).Select(x => x.EventArgs); }
+        }
+
+    }
+    public class RadJumpListEvents
+
+    {
+        RadJumpList This;
+
+        public RadJumpListEvents(RadJumpList This)
+
+        {
+            this.This = This;
+        }
+
+        public IObservable<Telerik.Windows.Controls.GroupHeaderItemTapEventArgs> GroupHeaderItemTap {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.GroupHeaderItemTapEventArgs>, Telerik.Windows.Controls.GroupHeaderItemTapEventArgs>(x => This.GroupHeaderItemTap += x, x => This.GroupHeaderItemTap -= x).Select(x => x.EventArgs); }
+        }
+
+        public IObservable<Telerik.Windows.Controls.GroupPickerItemTapEventArgs> GroupPickerItemTap {
+            get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.GroupPickerItemTapEventArgs>, Telerik.Windows.Controls.GroupPickerItemTapEventArgs>(x => This.GroupPickerItemTap += x, x => This.GroupPickerItemTap -= x).Select(x => x.EventArgs); }
         }
 
     }
