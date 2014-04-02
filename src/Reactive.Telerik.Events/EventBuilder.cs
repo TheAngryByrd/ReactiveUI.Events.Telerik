@@ -369,6 +369,14 @@ namespace EventBuilder
             {
                 fullPath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.0\Microsoft.Phone.dll";
             }
+            if(fullName.Contains("PresentationCore"))
+            {
+                fullPath = @"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\PresentationCore.dll";
+            } 
+            if(fullName.Contains("PresentationFramework"))
+            {
+                fullPath = @"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.0\PresentationFramework.dll";
+            }
             if(fullName.Contains("Windows"))
             {
                 fullPath = @"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd";

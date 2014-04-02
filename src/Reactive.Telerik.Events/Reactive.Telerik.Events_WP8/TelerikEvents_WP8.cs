@@ -767,10 +767,6 @@ namespace Telerik.Windows.Controls
             get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.Primitives.SelectorItemClickEventArgs>, Telerik.Windows.Controls.Primitives.SelectorItemClickEventArgs>(x => This.ItemClick += x, x => This.ItemClick -= x).Select(x => x.EventArgs); }
         }
 
-        public IObservable<System.Windows.Controls.SelectionChangedEventArgs> SelectionChanged {
-            get { return Observable.FromEventPattern<System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs>(x => This.SelectionChanged += x, x => This.SelectionChanged -= x).Select(x => x.EventArgs); }
-        }
-
     }
     public class RadContextMenuItemEvents
 
@@ -897,10 +893,6 @@ namespace Telerik.Windows.Controls
 
         public IObservable<Telerik.Windows.Controls.ListBoxItemTapEventArgs> ItemTap {
             get { return Observable.FromEventPattern<System.EventHandler<Telerik.Windows.Controls.ListBoxItemTapEventArgs>, Telerik.Windows.Controls.ListBoxItemTapEventArgs>(x => This.ItemTap += x, x => This.ItemTap -= x).Select(x => x.EventArgs); }
-        }
-
-        public IObservable<System.Windows.Controls.SelectionChangedEventArgs> SelectionChanged {
-            get { return Observable.FromEventPattern<System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs>(x => This.SelectionChanged += x, x => This.SelectionChanged -= x).Select(x => x.EventArgs); }
         }
 
         public IObservable<Telerik.Windows.Controls.SelectionChangingEventArgs> SelectionChanging {
@@ -1041,10 +1033,6 @@ namespace Telerik.Windows.Controls
 
         {
             this.This = This;
-        }
-
-        public IObservable<System.Windows.Controls.SelectionChangedEventArgs> SelectionChanged {
-            get { return Observable.FromEventPattern<System.Windows.Controls.SelectionChangedEventHandler, System.Windows.Controls.SelectionChangedEventArgs>(x => This.SelectionChanged += x, x => This.SelectionChanged -= x).Select(x => x.EventArgs); }
         }
 
         public IObservable<System.EventArgs> SlideAnimationStarted {
